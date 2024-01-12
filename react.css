@@ -52836,13 +52836,13 @@ body {
   display: inline-block;
   width: 25px;
   height: 25px;
-  background: url(/Content/_shared/img/workflow/actions/sprites.png) 0px 0px;
+  background: url(/assets/css-report/images/sprites.png) 0px 0px;
 }
 .survey-workflow-nav .undo-redo-container .font-enabled-icon {
   display: inline-block;
   width: 25px;
   height: 25px;
-  background: url(/Content/_shared/img/workflow/actions/sprites.png) -25px 0px;
+  background: url(/assets/css-report/images/sprites.png) -25px 0px;
 }
 .survey-workflow-nav .nav-tabs {
   border: none;
@@ -52880,49 +52880,49 @@ body {
 .survey-workflow-nav .nav-tabs > li.workflow-tab > a .workflow-icon.workflow-creation-stage {
   width: 32px;
   height: 32px;
-  background: url(/Content/_shared/img/workflow/navigation/sprites.png?ver=1.0) 0px 0px;
+  background: url(/assets/css-report/images/sprites.png?ver=1.0) 0px 0px;
 }
 .survey-workflow-nav .nav-tabs > li.event-workflow-tab > a .workflow-icon.workflow-case-management-settings-stage,
 .survey-workflow-nav .nav-tabs > li.workflow-tab > a .workflow-icon.workflow-case-management-settings-stage {
   width: 32px;
   height: 32px;
-  background: url(/Content/_shared/img/workflow/navigation/sprites.png?ver=1.0) -32px 0px;
+  background: url(/assets/css-report/images/sprites.png?ver=1.0) -32px 0px;
 }
 .survey-workflow-nav .nav-tabs > li.event-workflow-tab > a .workflow-icon.workflow-reporting-stage,
 .survey-workflow-nav .nav-tabs > li.workflow-tab > a .workflow-icon.workflow-reporting-stage {
   width: 32px;
   height: 32px;
-  background: url(/Content/_shared/img/workflow/navigation/sprites.png?ver=1.0) -64px 0px;
+  background: url(/assets/css-report/images/sprites.png?ver=1.0) -64px 0px;
 }
 .survey-workflow-nav .nav-tabs > li.event-workflow-tab > a .workflow-icon.workflow-publishing-stage,
 .survey-workflow-nav .nav-tabs > li.workflow-tab > a .workflow-icon.workflow-publishing-stage {
   width: 32px;
   height: 32px;
-  background: url(/Content/_shared/img/workflow/navigation/sprites.png?ver=1.0) 0px -32px;
+  background: url(/assets/css-report/images/sprites.png?ver=1.0) 0px -32px;
 }
 .survey-workflow-nav .nav-tabs > li.event-workflow-tab > a .workflow-icon.workflow-followup-stage,
 .survey-workflow-nav .nav-tabs > li.workflow-tab > a .workflow-icon.workflow-followup-stage {
   width: 32px;
   height: 32px;
-  background: url(/Content/_shared/img/workflow/navigation/sprites.png?ver=1.0) -32px -32px;
+  background: url(/assets/css-report/images/sprites.png?ver=1.0) -32px -32px;
 }
 .survey-workflow-nav .nav-tabs > li.event-workflow-tab > a .workflow-icon.workflow-manage-participants-stage,
 .survey-workflow-nav .nav-tabs > li.workflow-tab > a .workflow-icon.workflow-manage-participants-stage {
   width: 32px;
   height: 32px;
-  background: url(/Content/_shared/img/workflow/navigation/sprites.png?ver=1.0) -64px -32px;
+  background: url(/assets/css-report/images/sprites.png?ver=1.0) -64px -32px;
 }
 .survey-workflow-nav .nav-tabs > li.event-workflow-tab > a .workflow-icon.workflow-event-settings-stage,
 .survey-workflow-nav .nav-tabs > li.workflow-tab > a .workflow-icon.workflow-event-settings-stage {
   width: 32px;
   height: 32px;
-  background: url(/Content/_shared/img/workflow/navigation/sprites.png?ver=1.0) 0px -64px;
+  background: url(/assets/css-report/images/sprites.png?ver=1.0) 0px -64px;
 }
 .survey-workflow-nav .nav-tabs > li.event-workflow-tab > a .workflow-icon.workflow-analysis-stage,
 .survey-workflow-nav .nav-tabs > li.workflow-tab > a .workflow-icon.workflow-analysis-stage {
   width: 32px;
   height: 32px;
-  background: url(/Content/_shared/img/workflow/navigation/sprites.png?ver=1.0) -32px -64px;
+  background: url(/assets/css-report/images/sprites.png?ver=1.0) -32px -64px;
 }
 .survey-workflow-nav .nav-tabs > li.event-workflow-tab > a:hover,
 .survey-workflow-nav .nav-tabs > li.workflow-tab > a:hover,
