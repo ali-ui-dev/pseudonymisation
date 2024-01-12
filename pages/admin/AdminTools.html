@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin tools</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"
+        integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script> $(function () { $("#topHeaderOnly").load("TopHeaderOnly.html"); }); </script>
+
+    <link href="assets/react.css" rel="stylesheet">
+    <link href="assets/bootstrap-datetimepicker.css" rel="stylesheet">
+</head>
+
+<body class="stage-environment" data-spy="scroll" data-target="#scrollspy" id="pageBody">
+
+    <div id="admin-tools-app" data-language-id="d9c05e79-ea43-4cc7-9fb6-2ed562cce6d0">
+        <div class="survey-data fill-height">
+            <div class="SplitPane fill-height split-panel-without-resizer horizontal"
+                style="display: flex; flex: 1 1 0%; height: 100%; position: absolute; outline: none; overflow: hidden; user-select: text; bottom: 0px; flex-direction: column; min-height: 100%; top: 0px; width: 100%;">
+                <div class="Pane horizontal Pane1"
+                    style="flex: 0 0 auto; position: relative; outline: none; height: auto; display: flex;">
+                    <div class="fill-width">
+
+                        <div id="topHeaderOnly"></div>
+
+                    </div>
+                </div>
+                <div role="presentation" class="resizer horizontal" style="flex: 0 0 auto;">
+                    <div class="toggler opened"></div>
+                </div>
+                <div class="Pane horizontal Pane2 scrollable"
+                    style="flex-grow: 1; flex-shrink: 1; position: relative; outline: none;">
+                    <div class="SplitPane split-panel-without-resizer split-panel-with-overflow horizontal"
+                        style="display: flex; flex: 1 1 0%; height: 100%; position: absolute; outline: none; overflow: hidden; user-select: text; bottom: 0px; flex-direction: column; min-height: 100%; top: 0px; width: 100%;">
+                        <div class="Pane horizontal Pane1"
+                            style="flex-grow: 1; flex-shrink: 1; position: relative; outline: none;">
+                            <div class="fill-width fill-height" id="main-content">
+                                <div class="container">
+                                    <div class="boss-tools">
+                                        <div class="back-button-container">
+                                            <div class="back-button"><a href="#" class=""><i
+                                                        class="fal fa-angle-double-left"></i><span>Back to
+                                                        survey</span></a></div>
+                                        </div>
+                                        <h1>Admin tools</h1>
+                                        <div class="row fade-fast-enter-active-done fade-fast-enter-done">
+                                            <div class="col-md-6">
+                                                <div class="row title-group-nav">
+                                                    <div class="col-md-12">
+                                                        <div class="col-md-1 disp-inline font-18 user-managent-icon">
+                                                        </div>
+                                                        <div class="col-md-11 disp-inline no-padding">
+                                                            <h2>User management and survey rights</h2>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="nav-list-items">
+                                                    <ul>
+                                                        <li class=""><a href="UserManagement.html" class=""><span>User
+                                                                    management and new
+                                                                    user
+                                                                    creation</span></a></li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li class=""><a href="#" class=""><span>Survey and folder
+                                                                    rights</span></a></li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li class=""><a href="#" class=""><span>User group
+                                                                    management</span></a></li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li class=""><a href="#" class=""><span>Access requests <span
+                                                                        class="count-of-access-requests">(0)</span></span></a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="row title-group-nav">
+                                                    <div class="col-md-12">
+                                                        <div
+                                                            class="col-md-1 disp-inline font-18 additional-modules-icon">
+                                                        </div>
+                                                        <div class="col-md-11 disp-inline no-padding">
+                                                            <h2>Additional modules</h2>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="nav-list-items">
+                                                    <ul>
+                                                        <li class=""><a title="" href="#"><span>360
+                                                                    Evaluations</span></a><span class="tooltip-element"
+                                                                aria-label="Tooltip" tabindex="0"
+                                                                aria-expanded="false"><i
+                                                                    class="far fa-info-circle popover-icon"
+                                                                    aria-hidden="true"></i></span></li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li class=""><a href="#"><span>Hierarchy</span></a><span
+                                                                class="tooltip-element" aria-label="Tooltip"
+                                                                tabindex="0" aria-expanded="false"><i
+                                                                    class="far fa-info-circle popover-icon"
+                                                                    aria-hidden="true"></i></span></li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li class=""><a href="#" class=""><span>Hierarchy
+                                                                    administrators</span></a><span
+                                                                class="tooltip-element" aria-label="Tooltip"
+                                                                tabindex="0" aria-expanded="false"><i
+                                                                    class="far fa-info-circle popover-icon"
+                                                                    aria-hidden="true"></i></span></li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li class=""><a href="#"><span>Suomi.fi
+                                                                    Messages</span></a><span
+                                                                class="tools-item-status"><span>Status:</span><span
+                                                                    class="set">In use</span></span><span
+                                                                class="tooltip-element" aria-label="Tooltip"
+                                                                tabindex="0" aria-expanded="false"><i
+                                                                    class="far fa-info-circle popover-icon"
+                                                                    aria-hidden="true"></i></span></li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li class=""><a href="#"><span>Online
+                                                                    payments and receipts</span></a><span
+                                                                class="tooltip-element" aria-label="Tooltip"
+                                                                tabindex="0" aria-expanded="false"><i
+                                                                    class="far fa-info-circle popover-icon"
+                                                                    aria-hidden="true"></i></span></li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li class=""><a href="#"><span>Answering
+                                                                    with voice</span></a><span class="tooltip-element"
+                                                                aria-label="Tooltip" tabindex="0"
+                                                                aria-expanded="false"><i
+                                                                    class="far fa-info-circle popover-icon"
+                                                                    aria-hidden="true"></i></span></li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li class=""><a href="#"><span>Wott
+                                                                    Management</span></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div class="col-md-6">
+                                                <div class="row title-group-nav">
+                                                    <div class="col-md-12">
+                                                        <div class="col-md-1 disp-inline font-18 security-icon"></div>
+                                                        <div class="col-md-11 disp-inline no-padding">
+                                                            <h2>Security and data protection</h2>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="nav-list-items">
+                                                    <ul>
+                                                        <li class=""><a href="#" class=""><span>User Environment
+                                                                    cleaning <span
+                                                                        class="count-of-access-requests">(30)</span></span></a>
+                                                        </li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li class=""><a href="#"><span>Restore
+                                                                    surveys</span></a><span class="tooltip-element"
+                                                                aria-label="Tooltip" tabindex="0"
+                                                                aria-expanded="false"><i
+                                                                    class="far fa-info-circle popover-icon"
+                                                                    aria-hidden="true"></i></span></li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li class=""><a href="#"><span>Personal
+                                                                    data management (GDPR)</span></a></li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li class=""><a href="#"><span>Password
+                                                                    policy</span></a></li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li class=""><a href="#"><span>Two
+                                                                    factor authentication</span></a><span
+                                                                class="tools-item-status"><span class="no-set">Not in
+                                                                    use</span></span><span class="tooltip-element"
+                                                                aria-label="Tooltip" tabindex="0"
+                                                                aria-expanded="false"><i
+                                                                    class="far fa-info-circle popover-icon"
+                                                                    aria-hidden="true"></i></span></li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li class=""><a href="#"><span>IP
+                                                                    restrictions</span></a><span class="tooltip-element"
+                                                                aria-label="Tooltip" tabindex="0"
+                                                                aria-expanded="false"><i
+                                                                    class="far fa-info-circle popover-icon"
+                                                                    aria-hidden="true"></i></span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="row title-group-nav">
+                                                    <div class="col-md-12">
+                                                        <div class="col-md-1 disp-inline font-18 settings-icon"></div>
+                                                        <div class="col-md-11 disp-inline no-padding">
+                                                            <h2>Other tools</h2>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="nav-list-items">
+                                                    <ul>
+                                                        <li class=""><a href="#"><span>Respondent
+                                                                    login page</span></a></li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li class=""><a href="#" class=""><span>Define question keywords
+                                                                    for
+                                                                    environment</span></a><span class="tooltip-element"
+                                                                aria-label="Tooltip" tabindex="0"
+                                                                aria-expanded="false"><i
+                                                                    class="far fa-info-circle popover-icon"
+                                                                    aria-hidden="true"></i></span></li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li class=""><a href="#" class=""><span>Create Question
+                                                                    IDs</span></a><span class="tooltip-element"
+                                                                aria-label="Tooltip" tabindex="0"
+                                                                aria-expanded="false"><i
+                                                                    class="far fa-info-circle popover-icon"
+                                                                    aria-hidden="true"></i></span></li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li class=""><a href="#"><span>Respondent
+                                                                    Panel </span></a><span class="tooltip-element"
+                                                                aria-label="Tooltip" tabindex="0"
+                                                                aria-expanded="false"><i
+                                                                    class="far fa-info-circle popover-icon"
+                                                                    aria-hidden="true"></i></span></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div role="presentation" class="resizer horizontal" style="flex: 0 0 auto;">
+                            <div class="toggler opened"></div>
+                        </div>
+                        <div class="Pane horizontal Pane2"
+                            style="flex: 0 0 auto; position: relative; outline: none; height: auto; display: flex;">
+                            <div class="clearfix fill-width">
+                                <footer class="footer" role="contentinfo">
+                                    <div class="container footer-container">
+                                        <div class="row fade-normal-enter-active-done fade-normal-enter-done">
+                                            <div class="col-md-4 company-info" data-tab-group="3.6">
+                                                <h2><strong>Webropol</strong></h2>
+                                                <address class="address"><strong>Support, Service Desk
+                                                    </strong><br>Phone number: <a href="#" style="color: #095267"
+                                                        title="Link to telephone">0600 17005</a>
+                                                    Office hours: Mon-Fri 8:00-16:00<br>Call charges: 3,00 €/min + pvm
+                                                </address><br><br><span><a href="#" target="_blank"
+                                                        rel="noopener noreferrer" title="(opens in a new tab)"><span
+                                                            class="fas fa-file-pdf"
+                                                            aria-hidden="true"></span><span>Download
+                                                            Survey&amp;Reporting user guide</span><span
+                                                            class="fal fa-angle-double-right"
+                                                            aria-hidden="true"></span></a></span><br><br>
+                                                <div><a href="#" class="btn btn-call-to-action"
+                                                        title="Need a training video?">Need a training video?</a></div>
+                                                <br>
+                                                <div><span class="w-logo" aria-label="Webropol logo"></span><span><i
+                                                            class="far fa-copyright" aria-hidden="true"></i>Webropol
+                                                        2023</span></div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div>
+                                                    <h2><strong>Support</strong></h2>
+                                                    <p>For support and instructions of creating and publishing surveys
+                                                        and reports, please contact us as follows: </p>
+                                                    <ul>
+                                                        <li>Log into Webropol and open your survey on edit/collect
+                                                            answers/follow up/reporting tab.</li>
+                                                        <li>Open the 'Contact Support' form on the right side of the
+                                                            page.</li>
+                                                        <li>Check the box under 'I grant Webropol support permission to
+                                                            access my user account' to allow Service Desk to view your
+                                                            survey/report.</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4" data-tab-group="3.7">
+                                                <div>
+                                                    <h2><strong>Report a problem</strong></h2>
+                                                    <p>Phone number: <a href="#" class="blue-link">020
+                                                            155 2160</a><br>Office hours: Mon-Fri 8:00-16:00 (Free of
+                                                        charge)<br></p>
+                                                    <p>You can use the toll-free number to report malfunctions in the
+                                                        Webropol. For support and instructions please call <a href="#"
+                                                            class="blue-link">0600 17005</a>. Call
+                                                        charges: 3,00 €/min + local network rate</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </footer>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="scrollup-btn" class="hide" data-tab-group="5.2"><a href="#" class="" title="To the top"><span
+                    class="fa fa-chevron-up"></span></a></div>
+    </div>
+
+</body>
+
+</html>

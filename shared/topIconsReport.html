@@ -1,0 +1,77 @@
+<div class="report-toolbar toolbar-right-panel">
+    <a href="#" class="image-and-text-button report-image-and-text-button" data-bind="click: onShowFiltering"
+      title="Filter">
+      <span class="first-line-image-icon background-position-center filter-icon"></span>
+      <div class="second-line-text icon-text-third">Filter</div>
+    </a>
+    <a href="#" class="image-and-text-button report-image-and-text-button"
+      data-bind="click: CompareGroupsSettings.onShowCompareGroups" title="Compare">
+      <span class="first-line-image-icon background-position-center compare-icon"></span>
+      <div class="second-line-text icon-text-third">Compare</div>
+    </a>
+    <a href="#" class="image-and-text-button report-image-and-text-button"
+      data-bind="click: function() { if(CanViewRespondents()){selectRespondents();}}, css: { disabled: !CanViewRespondents() }"
+      title="Respondents">
+      <span class="first-line-image-icon background-position-center respondents-icon"></span>
+      <div class="second-line-text icon-text-third">Respondents</div>
+    </a>
+    <span class="js-popover-container-testanswer"></span>
+    <a href="#" class="image-and-text-button report-image-and-text-button"
+      data-bind="disabledLink: !CanCombineReports(), attr: { title: CombineReportsTooltipText }, css: { 'disabled': !CanCombineReports() }, click: onShowCombineReports"
+      title="Combine reports">
+      <span class="first-line-image-icon background-position-center combine-reports-icon"></span>
+      <div class="second-line-text icon-text-third">
+        <p style="text-align: center">Combine Reports</p>
+      </div>
+    </a>
+    <a href="#" class="image-and-text-button report-image-and-text-button"
+      data-bind="popover: { template: 'create-reports-template', placement: 'bottom', viewModel: $data.MultipleReportsSettings }"
+      title="Multiple Reports" data-original-title="Multiple Reports">
+      <span class="first-line-image-icon background-position-center individual-report-icon"></span>
+      <div class="second-line-text icon-text-third">
+        <p style="text-align: center">Multiple Reports</p>
+      </div>
+    </a>
+    <a href="#" class="image-and-text-button report-image-and-text-button"
+      data-bind="click: openReportTimeSeries" title="Timeline">
+      <span class="first-line-image-icon background-position-center time-series-icon"></span>
+      <div class="second-line-text icon-text-third">Timeline</div>
+    </a>
+    <a href="#" id="showLayoutSettings" class="image-and-text-button report-image-and-text-button"
+      title="Layout" data-original-title="Layout">
+      <span class="first-line-image-icon background-position-center layout-settings-icon"></span>
+      <div class="second-line-text icon-text-third">Layout</div>
+    </a>
+    <span class="js-popover-container"></span>
+    <a href="#" id="showAddElements" class="image-and-text-button report-image-and-text-button"
+      data-bind="popover: { template: 'add-elements-template', placement: 'bottom', viewModel: $data }"
+      title="Add Elements" data-original-title="Add Elements">
+      <span class="first-line-image-icon background-position-center add-element-icon"></span>
+      <div class="second-line-text icon-text-third">
+        <center>Add Elements</center>
+      </div>
+    </a>
+    <a href="#" class="image-and-text-button report-image-and-text-button"
+      data-bind="click: openRespondentsWeighting" title="Respondents Weighting">
+      <span class="first-line-image-icon background-position-center respondents-weighting-icon"></span>
+      <div class="second-line-text icon-text-third">Respondents Weighting</div>
+    </a>
+    <a href="#" id="showAnalyticsReportSettings" class="image-and-text-button report-image-and-text-button"
+      title="Analytics" data-original-title="Analytics">
+      <span class="first-line-image-icon background-position-center analytics-settings-icon"></span>
+      <div class="second-line-text icon-text-third">Analytics</div>
+    </a>
+    <span class="js-popover-container"></span>
+    <a href="#" class="text-center image-and-text-button report-image-and-text-button"
+      data-bind="click: onShowPersonalData" title="Personal data">
+      <span class="first-line-image-icon background-position-center personal-data-icon"></span>
+      <div class="second-line-text icon-text-third">Personal Data</div>
+    </a>
+    <a href="#" class="image-and-text-button report-image-and-text-button"
+      data-bind="click: onShowExportAndShare" title="Export &amp; Share">
+      <span class="first-line-image-icon background-position-center export-icon"></span>
+      <div class="second-line-text icon-text-third highlighted">
+        <p style="text-align: center">Export Share</p>
+      </div>
+    </a>
+  </div>

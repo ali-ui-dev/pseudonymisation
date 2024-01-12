@@ -1,0 +1,209 @@
+<div data-bind="delegatedHandler: 'click'">
+    <div class="question-card"
+      data-bind="template: {name: $data.getReportItemTemplateName(), data: $data}">
+      <div class="report-question "
+        data-bind="attr: { id: 'q-' + QuestionId() }, if: !IsDeleted(), scrolledIntoView: $data, isVisibleObservable: isChartVisible, sync: $data"
+        id="q-2234322">
+        <div class="well-report" data-bind="css: { selected: IsSelected() }">
+          <div class="trigger well-question-list"
+            data-bind="css: {'well-question-list': !IsReadonly()}" data-click="onQuestionClick">
+            <div class="report-question-menu">
+              <a class="menu-item hidden" href="#"
+                data-bind="afterDomRender: createChartTypePopoverForQuestion, css: { hidden: !CanShowChartTypesSettings() || Settings.IsTimeSeries() }"
+                title="Change Chart type" data-original-title="Chart type">
+                <img src="/Content/images/chart-type.png">
+              </a>
+              <a class="menu-item" href="#"
+                data-bind="afterDomRender: createChartSettingsPopoverForQuestion" title="Settings"
+                data-original-title="Settings">
+                <img src="/Content/images/cog-wheel-grey.png">
+              </a>
+              <a class="menu-item" href="#" data-bind="click: copyQuestion" title="Copy">
+                <img src="/Content/images/chart-copy.png">
+              </a>
+              <a class="menu-item" href="#"
+                data-bind="click: showQuestionFilterModal, css: { hidden: !CanShowQuestionFilterSettings() }"
+                title="Question filter">
+                <img src="/Content/images/actions/filter.png">
+              </a>
+              <a class="menu-item" href="#"
+                data-bind="click: showQuestionCompareGroupsModal, css: { hidden: !CanShowQuestionFilterSettings() }"
+                title="Question compare groups">
+                <img src="/Content/images/actions/compare-groups.png">
+              </a>
+              <a class="menu-item" href="#"
+                data-bind="click: function(data, e) { deleteQuestion('Delete question') }"
+                title="Delete">
+                <img src="/Content/images/chart-delete.png">
+              </a>
+              <span class="menu-item js-popover-container"></span>
+            </div>
+            <div class="row">
+              <div class="col-md-12 text-left" data-bind="css: Settings.TitleAlignmentCss">
+                <div class="editable-area question-title storage-question-title-style" data-bind=""
+                  id="_inline_cked_2" contenteditable="true">Contact form<br></div>
+              </div>
+            </div>
+            <div class="row" data-bind="visible: StartDate() != null || FinishDate() != null"
+              style="display: none;">
+              <div class="col-md-12">
+                <em>
+                  <span>Filter settings:</span>
+                  <span data-bind="visible: StartDate() != null" style="display: none;">Start
+                    date:</span>
+                  <span data-bind="text: StartDate"></span>
+                  <span data-bind="visible: FinishDate() != null" style="display: none;">Finish
+                    date:</span>
+                  <span data-bind="text: FinishDate"></span>
+                </em>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <h3 class="response-count storage-report-number-responce-style"
+                  data-bind="attr: { style: TextStyles.NumberOfResponsesStyle }">
+                  Number of respondents: <span data-bind="text: ResponseCount">1</span>
+                </h3>
+                <span class="gdpr-info" data-bind="attr: { id: getGpdrPopoverId() }"
+                  data-content="If personal data is not visible, user has deleted personal data from this question.</br>More details in Survey Properties -> History log.</br>Log entry “GDPR Answers removed…”"
+                  data-html="true" data-placement="right" data-toggle="popover" data-trigger="hover"
+                  id="q-gdpr-info-2234322" data-original-title="" title="">
+                  <i class="far fa-exclamation-square"></i>
+                </span>
+                <div data-bind="">
+                  <div data-bind="">
+                    <div class="row export-hidden">
+                      <div class="col-md-12">
+                        <span>
+                          <strong>
+                            Export all text answers in <a href="#" class="blue-link"
+                              data-bind="click:onExportQuestionToWord">Word</a> or <a href="#"
+                              class="blue-link" data-bind="click:onExportQuestionToPdf">PDF</a>
+                          </strong>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="table-container-wrapper">
+                        <div class="col-md-12 overflow-auto">
+                          <div class="table-container container-border">
+                            <div class="display-table-cell"
+                              data-bind="template: { name: 'table-view-template', data: $data}">
+                              <div class="report-table"
+                                data-bind="click: $data.CanSetTableSettings() &amp;&amp; $data.onTableClick, attr: { id: GeneratedStyleId }"
+                                id="tbl1658743432">
+                                <div class="title" data-bind="if: Title"></div>
+                                <div class="title" data-bind="if: SubTitle"></div>
+                                <style type="text/css" data-bind="text: GeneratedCssStyle">
+                                  #tbl1658743432 .stl1 {
+                                    font-family: Arial;
+                                    font-size: 14px;
+                                    font-weight: bold;
+                                    color: #333333;
+                                    border-bottom: 2px solid #124456;
+                                    text-align: left;
+                                    vertical-align: top;
+                                  }
+
+                                  #tbl1658743432 .stl2 {
+                                    font-family: Arial;
+                                    font-size: 14px;
+                                    color: #333333;
+                                    text-align: left;
+                                    vertical-align: top;
+                                  }
+                                </style>
+                                <table class="table table-bordered table-report"
+                                  data-bind="css: tableClass">
+                                  <thead data-bind="foreach: RowOfColumns">
+                                    <tr data-bind="foreach: $data">
+                                      <th data-bind="" colspan="1" rowspan="1" class="stl1"
+                                        scope="column">
+                                        <div
+                                          data-bind="template: { name: 'table-cell-template', data: $data }">
+                                          <div class="table-cell-value" contenteditable="true"
+                                            data-bind="inlineCkeditor:{value:DisplayValue, ckeditorOptions: { language: 'en', updateModelOnEveryChange: false } } "
+                                            id="_inline_cked_3">First name</div>
+                                        </div>
+                                      </th>
+                                      <th data-bind="" colspan="1" rowspan="1" class="stl1"
+                                        scope="column">
+                                        <div
+                                          data-bind="template: { name: 'table-cell-template', data: $data }">
+                                          <div class="table-cell-value" contenteditable="true"
+                                            data-bind="inlineCkeditor:{value:DisplayValue, ckeditorOptions: { language: 'en', updateModelOnEveryChange: false } } "
+                                            id="_inline_cked_4">Last name</div>
+                                        </div>
+                                      </th>
+                                      <th data-bind="" colspan="1" rowspan="1" class="stl1"
+                                        scope="column">
+                                        <div
+                                          data-bind="template: { name: 'table-cell-template', data: $data }">
+                                          <div class="table-cell-value" contenteditable="true"
+                                            data-bind="inlineCkeditor:{value:DisplayValue, ckeditorOptions: { language: 'en', updateModelOnEveryChange: false } } "
+                                            id="_inline_cked_5">Mobile</div>
+                                        </div>
+                                      </th>
+                                      <th data-bind="" colspan="1" rowspan="1" class="stl1"
+                                        scope="column">
+                                        <div
+                                          data-bind="template: { name: 'table-cell-template', data: $data }">
+                                          <div class="table-cell-value" contenteditable="true"
+                                            data-bind="inlineCkeditor:{value:DisplayValue, ckeditorOptions: { language: 'en', updateModelOnEveryChange: false } } "
+                                            id="_inline_cked_6">Email</div>
+                                        </div>
+                                      </th>
+                                    </tr>
+                                  </thead>
+                                  <tbody>
+                                    <tr
+                                      data-bind="foreach: Values, attr: { 'class': (canShowSubRows() ? 'with-sub-rows ' : '') + (RowLevelClass() || '') + ' ' + (CssClass() || '') }"
+                                      class="row-level-0 ">
+                                      <td data-bind="" colspan="1" rowspan="1" class="stl2"
+                                        scope="row">
+                                        <div
+                                          data-bind="template: { name: 'table-cell-template', data: $data }">
+                                          <div class="table-cell-value keep-white-spaces"
+                                            data-bind="html: DisplayValue">Ali</div>
+                                        </div>
+                                      </td>
+                                      <td data-bind="" colspan="1" rowspan="1" class="stl2">
+                                        <div
+                                          data-bind="template: { name: 'table-cell-template', data: $data }">
+                                          <div class="table-cell-value keep-white-spaces"
+                                            data-bind="html: DisplayValue">Al-Zuhairi</div>
+                                        </div>
+                                      </td>
+                                      <td data-bind="" colspan="1" rowspan="1" class="stl2">
+                                        <div
+                                          data-bind="template: { name: 'table-cell-template', data: $data }">
+                                          <div class="table-cell-value keep-white-spaces"
+                                            data-bind="html: DisplayValue">+35866666666</div>
+                                        </div>
+                                      </td>
+                                      <td data-bind="" colspan="1" rowspan="1" class="stl2">
+                                        <div data-bind="">
+                                          <div class="table-cell-value"
+                                            data-bind="html: DisplayValue">
+                                            ali.al-zuhairi@webropol.com</div>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="clearfix"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

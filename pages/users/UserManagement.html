@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User management and new user creation</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"
+        integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script> $(function () { $("#topHeaderOnly").load("TopHeaderOnly.html"); }); </script>
+
+    <link href="assets/css.css" rel="stylesheet">
+    <style type="text/css"></style>
+</head>
+
+<body class="stage-environment" data-spy="scroll" data-target="#scrollspy" id="pageBody">
+    <section>
+        <div class="block push">
+            <div id="loading-indicator" style="display: none">
+                <img src="./User management and new user creation_files/ajax-loader.gif" alt="">
+            </div>
+            
+            <div id="topHeaderOnly"></div>
+
+
+            <div id="help-popup-template" class="modal fade" role="dialog" tabindex="-1"
+                style="display: none; opacity: 1;">
+                <div class="modal-dialog modal-dialog-lg" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <img src="./User management and new user creation_files/ico-close.png"
+                                    aria-hidden="true">
+                            </button>
+                            <h1 class="dialog-header-with-icon text-left">
+                                <i class="fa fa-2x fa-question help-center-question"></i>
+                                <span>Welcome to Webropol Survey&amp;Reporting Help Centre</span>
+                            </h1>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h2>Help Centre</h2>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h2>FAQ</h2>
+                                    <ul>
+                                        <li><strong>I have not used Webropol Survey&amp;Reporting yet, where can I get
+                                                help?</strong><br>Webropol Survey&amp;Reporting has an improved design
+                                            and additional features to make your surveys even better, and is easier to
+                                            use! On the Apps menu you will find the W-videos section, where you can find
+                                            free videos to get you started. You can also purchase personal training
+                                            videos from the W-store, which are available for 3 months from the date of
+                                            purchase. </li>
+                                        <li><strong>Where can I find my Events registration form?</strong><br>Events
+                                            forms are currently found under the Apps dropdown menu, in Events
+                                            Registration. From Apps dropdown menu you can also go to W-Store, BI VIEW
+                                            and Webropol Survey&amp;Reporting.</li>
+                                        <li><strong>What is Webropol BI VIEW? </strong><br>BI VIEW is a reporting portal
+                                            developed by Webropol, where you can easily create dashboards and visualize
+                                            your data according to your specific needs. In addition to attaching graphs
+                                            to Webropol reports, you can also attach tables, pictures, and videos and
+                                            share them within your organisation, with stakeholders, or publicly.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h2>Download Manual</h2><br><a href="#" target="”_blank”">Webropol
+                                        Survey&amp;Reporting manual, PDF</a><br><a href="#" target="”_blank”">Webropol
+                                        Events, PDF</a><br><a href="#" target="”_blank”">Webropol Survey&amp;Reporting
+                                        SMS Survey instructions,
+                                        PDF</a><br><a href="#" target="”_blank”">Professional Statistics manual, PDF
+                                    </a><br><a href="#" target="”_blank”">URL parameters introduction (PDF)</a><br>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="w-store-ad">
+                                        <h2>Personal training video will pay off in no time</h2>
+                                        <ul>
+                                            <li>Speed up your work and avoid Service Desk contacts</li>
+                                            <li>Enhance your skills and the benefits of high-quality opportunities</li>
+                                            <li>Ensure comprehensive analysis of results</li>
+                                        </ul>
+                                        <a data-action-url="/Home/AddCallToAction" data-cta-name="HelpCenter"
+                                            data-target-url="/Shop/Wstore"
+                                            class="btn btn-call-to-action callToActionLink">
+                                            Need a training video?
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-default" type="button" data-dismiss="modal">
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content" id="main-content">
+                <div class="container">
+                    <div class="back-button-container">
+                        <div class="back-button">
+                            <a href="#">
+                                <i class="fal fa-angle-double-left"></i>
+                                <span>Back to survey</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="container panel-body template-folders-breadcrumbs-container">
+                    <div class="row my-webropol-breadcrumbs row-bottom-offset">
+                        <div>
+                            <a href="#">Home</a>/
+                            <a href="#">Admin tools</a>/
+                            <span>User management and new user creation</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="boss-tools">
+                        <ul class="nav nav-tabs " role="tablist">
+                            <li class="active" role="presentation">
+                                <a href="#" class="">
+                                    <span>User management and new user creation</span>
+                                </a>
+                            </li>
+                            <li class="" role="presentation">
+                                <a href="#" class="">
+                                    <span>Survey and folder rights</span>
+                                </a>
+                            </li>
+                            <li class="" role="presentation">
+                                <a href="#" class="">
+                                    <span>User group management</span>
+                                </a>
+                            </li>
+                            <li class="" role="presentation">
+                                <a href="#" class="">
+                                    <span>Access requests <span class="count-of-access-requests">(0)</span></span>
+                                </a>
+                            </li>
+                        </ul>
+                        <h1>User management and new user creation</h1>
+                        <div class="user-management-buttons row-bottom-offset">
+                            <div class="btn-toolbar" id="create-user" role="group">
+                                <a class="btn btn-primary" href="MyWebropolNew.html">Create new user</a>
+                            </div>
+                        </div>
+                        <button class="btn btn-xs" type="button" data-bind="click: onDeleteUserClick,
+               enable: IsDeleteEnabled,
+               css: { &#39;btn-primary&#39;: IsDeleteEnabled }" disabled="">
+                            Delete
+                        </button>
+                        <div class="user-management-grid">
+                            <div class="row no-margin generic-grid-filter-container">
+                                <div class="pull-left generic-subheading">
+                                    <h3 data-bind="data">Click user name to edit the user data.</h3>
+                                </div>
+                                <div class="export-excel-container">
+                                    <div class="pull-right">
+                                        <a href="#" class="export-excel generic-filter__field vmiddle" data-bind="data">
+                                            <form class="ExportToExcelForm" method="POST">
+                                                <span class="export-excel__icon">&nbsp;</span>
+                                            </form>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="generic-filter pull-right">
+                                    <div class="">
+                                        <span class="vmiddle">Search By:</span>
+                                        <select class="generic-filter__search-field generic-filter__field vmiddle"
+                                            data-bind="data">
+                                            <option value="something">User name</option>
+                                            <option value="something">First name</option>
+                                            <option value="something">Last name</option>
+                                            <option value="something">Email</option>
+                                            <option value="something">User class</option>
+                                            <option value="something">User role</option>
+                                        </select>
+                                        <span class="generic-filter__search-details">
+                                            <span data-bind="data">
+                                                <select
+                                                    class="generic-filter__search-type generic-filter__field vmiddle"
+                                                    data-bind="data">
+                                                    <option value="something">Contains</option>
+                                                    <option value="something">Starts with</option>
+                                                </select>
+                                            </span>
+                                            <input class="generic-filter__search-text generic-filter__field vmiddle"
+                                                data-bind="data" autocomplete="off">
+                                        </span>
+                                        <input
+                                            class="generic-filter__search-btn generic-filter__field vmiddle btn btn-xs btn-success"
+                                            type="submit" data-bind="data" value="something">
+                                        <input
+                                            class="generic-filter__showall-btn generic-filter__field vmiddle btn btn-xs btn-success"
+                                            type="submit" data-bind="data" value="something" disabled="">
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="generic-grid clearfix" data-bind="data">
+                                <div class="horizontal-scrollable">
+                                    <table class="table table-bordered table-condensed">
+                                        <colgroup>
+                                            <col class="checkbox-column">
+                                            <col class="col-3">
+                                            <col class="col-2">
+                                            <col class="col-2">
+                                            <col class="col-4 filler-column">
+                                            <col class="col-1">
+                                            <col class="col-1">
+                                            <col class="col-1">
+                                            <col class="col-1">
+                                            <col class="col-1">
+                                            <col class="col-1">
+                                            <col class="col-1">
+                                        </colgroup>
+                                        <thead>
+                                            <tr>
+                                                <th class="checkbox-column item_centered" data-bind="data">
+                                                    <input type="checkbox" data-bind="data">
+                                                </th>
+                                                <th class="col-3 sorting" data-bind="data">
+                                                    <button type="button" data-use-sorting="True" class="column-header"
+                                                        data-bind="data">User
+                                                        name</button>
+                                                </th>
+                                                <th class="col-2 sorting" data-bind="data">
+                                                    <button type="button" data-use-sorting="True" class="column-header"
+                                                        data-bind="data">First
+                                                        name</button>
+                                                </th>
+                                                <th class="col-2 sorting" data-bind="data">
+                                                    <button type="button" data-use-sorting="True" class="column-header"
+                                                        data-bind="data">Last
+                                                        name</button>
+                                                </th>
+                                                <th class="col-4 filler-column sorting" data-bind="data">
+                                                    <button type="button" data-use-sorting="True" class="column-header"
+                                                        data-bind="data">Email</button>
+                                                </th>
+                                                <th class="col-1 sorting" data-bind="data">
+                                                    <button type="button" data-use-sorting="True" class="column-header"
+                                                        data-bind="data">User
+                                                        class</button>
+                                                </th>
+                                                <th class="col-1 sorting" data-bind="data">
+                                                    <button type="button" data-use-sorting="True" class="column-header"
+                                                        data-bind="data">BI
+                                                        VIEW user class</button>
+                                                </th>
+                                                <th class="col-1 item_centered" data-bind="data">
+                                                </th>
+                                                <th class="col-1 sorting" data-bind="data">
+                                                    <button type="button" data-use-sorting="True" class="column-header"
+                                                        data-bind="data">Last
+                                                        login</button>
+                                                </th>
+                                                <th class="col-1 sorting" data-bind="data">
+                                                    <button type="button" data-use-sorting="True" class="column-header"
+                                                        data-bind="data">Status</button>
+                                                </th>
+                                                <th class="col-1 sorting item_right" data-bind="data">
+                                                    <button type="button" data-use-sorting="True" class="column-header"
+                                                        data-bind="data">Surveys
+                                                        created</button>
+                                                </th>
+                                                <th class="col-1 sorting" data-bind="data">
+                                                    <button type="button" data-use-sorting="True" class="column-header"
+                                                        data-bind="data">User
+                                                        created</button>
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr data-bind="data">
+                                                <td class="item_centered" data-bind="data" title="">
+                                                    <input type="checkbox" data-bind="data">
+                                                </td>
+                                                <td class=" cell-menu" data-bind="data" title="">
+                                                    <span data-bind="data"><a style="padding: 2px 10px"
+                                                            href="MyWebropolBasic.html">johny</a></span>
+                                                </td>
+                                                <td class="" data-bind="data" title="">
+                                                    <span data-bind="data">John</span>
+                                                </td>
+                                                <td class="" data-bind="data" title="">
+                                                    <span data-bind="data">Johny</span>
+                                                </td>
+                                                <td class="" data-bind="data" title="">
+                                                    <span data-bind="data" user@user.com </td>
+                                                <td class="" data-bind="data" title="">
+                                                    <span data-bind="data">User</span>
+                                                </td>
+                                                <td class="" data-bind="data" title="">
+                                                    <span data-bind="data">-</span>
+                                                </td>
+                                                <td class="item_centered" data-bind="data" title="">
+                                                    <div data-bind="data">
+                                                        <input type="button"
+                                                            class="pin-code-item-button btn btn-xs btn-success"
+                                                            data-bind="data" value="something">
+                                                    </div>
+                                                </td>
+                                                <td class="" data-bind="data" title="">
+                                                    <span data-bind="data">13.02.2023</span>
+                                                </td>
+                                                <td class="" data-bind="data" title="">
+                                                    <span data-bind="data">Active</span>
+                                                </td>
+                                                <td class="item_right" data-bind="data" title="">
+                                                    <span data-bind="data">0</span>
+                                                </td>
+                                                <td class="" data-bind="data" title="">
+                                                    <span data-bind="data">08.02.2023</span>
+                                                </td>
+                                            </tr>
+                                            <tr data-bind="data" style="display: none;">
+                                                <td colspan="12" class="item_left">
+                                                </td>
+                                            </tr>
+                                            <tr style="display: none" data-bind="data">
+                                                <td colspan="12" class="item_centered">
+                                                    No data available
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody>
+                                            <tr data-bind="data">
+                                                <td class="item_centered" data-bind="data" title="">
+                                                    <input type="checkbox" data-bind="data">
+                                                </td>
+                                                <td class=" cell-menu" data-bind="data" title="">
+                                                    <span data-bind="data"><a style="padding: 2px 10px"
+                                                            href="MyWebropolAdmin.html">ali-admin</a></span>
+                                                </td>
+                                                <td class="" data-bind="data" title="">
+                                                    <span data-bind="data">Ali</span>
+                                                </td>
+                                                <td class="" data-bind="data" title="">
+                                                    <span data-bind="data">Al-Zuhairi</span>
+                                                </td>
+                                                <td class="" data-bind="data" title="">
+                                                    <span data-bind="data" user@user.com </td>
+                                                <td class="" data-bind="data" title="">
+                                                    <span data-bind="data">Administrator</span>
+                                                </td>
+                                                <td class="" data-bind="data" title="">
+                                                    <span data-bind="data">-</span>
+                                                </td>
+                                                <td class="item_centered" data-bind="data" title="">
+                                                    <div data-bind="data">
+                                                        <input type="button"
+                                                            class="pin-code-item-button btn btn-xs btn-success"
+                                                            data-bind="data" value="something">
+                                                    </div>
+                                                </td>
+                                                <td class="" data-bind="data" title="">
+                                                    <span data-bind="data">13.02.2023</span>
+                                                </td>
+                                                <td class="" data-bind="data" title="">
+                                                    <span data-bind="data">Active</span>
+                                                </td>
+                                                <td class="item_right" data-bind="data" title="">
+                                                    <span data-bind="data">0</span>
+                                                </td>
+                                                <td class="" data-bind="data" title="">
+                                                    <span data-bind="data">08.02.2023</span>
+                                                </td>
+                                            </tr>
+                                            <tr data-bind="data" style="display: none;">
+                                                <td colspan="12" class="item_left">
+                                                </td>
+                                            </tr>
+                                            <tr style="display: none" data-bind="data">
+                                                <td colspan="12" class="item_centered">
+                                                    No data available
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="fl-scrolls fl-scrolls-hidden" data-orientation="horizontal"
+                                        style="width: 1513px; left: 30px; height: 16px;">
+                                        <div style="width: 1966px;"></div>
+                                    </div>
+                                </div>
+                                <div class="generic-pager clearfix">
+                                    <div class="pull-left">
+                                        <a href="#" class="navigation-link disabled" data-bind="data">
+                                            <span class="first-page-arrow"></span>
+                                        </a>
+                                        <a href="#" class="navigation-link disabled" data-bind="data">
+                                            <span class="prev-page-arrow"></span>
+                                            <span>Previous</span>
+                                        </a>
+                                        <span class="current-page">
+                                            <span>Page</span>
+                                            <span data-bind="data">1</span>
+                                            <span>/</span>
+                                            <span data-bind="data">4</span>
+                                        </span>
+                                        <a class="navigation-link enabled" href="#" data-bind="data">
+                                            <span>Next</span>
+                                            <span class="next-page-arrow"></span>
+                                        </a>
+                                        <a class="navigation-link enabled" href="#" data-bind="data">
+                                            <span class="last-page-arrow"></span>
+                                        </a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <span>Show on page</span>
+                                        <a href="#" data-bind="data" class="pageSize selected">
+                                            20
+                                        </a>
+                                        <a href="#" data-bind="data" class="pageSize">
+                                            50
+                                        </a>
+                                        <a href="#" data-bind="data" class="pageSize">
+                                            100
+                                        </a>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn-xs" type="button" disabled="">
+                            Delete
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div id="popup-wrapper"></div>
+            <footer class="footer" role="contentinfo">
+                <div class="container footer-container">
+                    <div class="col-md-4 company-info" data-tab-group="3.6">
+                        <h2><strong>Webropol</strong></h2>
+                        <address class="address">
+                            <strong>Support, Service Desk </strong><br>Phone number: <a href="#" style="color: #095267"
+                                title="Link to telephone">0600 17005</a> Office hours: Mon-Fri
+                            8:00-16:00<br>Call charges: 3,00 €/min + pvm
+                        </address><br><br>
+                        <span>
+                            <a href="#" target="_blank">
+                                <i class="fas fa-file-pdf" aria-hidden="true"></i>
+                                Download Survey&amp;Reporting user guide
+                                <i class="fal fa-angle-double-right" aria-hidden="true"></i>
+                            </a>
+                        </span><br><br>
+                        <div>
+                            <a data-action-url="/Home/AddCallToAction" data-cta-name="Footer"
+                                data-target-url="/Shop/Wstore" class="btn btn-call-to-action callToActionLink">
+                                Need a training video?
+                            </a>
+                        </div>
+                        <br>
+                        <div>
+                            <span class="w-logo" aria-label="Webropol logo"></span>
+                            <span><i class="far fa-copyright" aria-hidden="true"></i>Webropol 2023</span>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <h2><strong>Support</strong></h2>
+                        <p>For support and instructions of creating and publishing surveys and reports, please contact
+                            us as follows: </p>
+                        <ul>
+                            <li>Log into Webropol and open your survey on edit/collect answers/follow up/reporting tab.
+                            </li>
+                            <li>Open the 'Contact Support' form on the right side of the page.</li>
+                            <li>Check the box under 'I grant Webropol support permission to access my user account' to
+                                allow Service Desk to view your survey/report.</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4" data-tab-group="3.7">
+                        <h2><strong>Report a problem</strong></h2>
+                        <p>Phone number: <a href="#" class="blue-link">020 155 2160</a><br>Office hours:
+                            Mon-Fri 8:00-16:00 (Free of charge)<br></p>
+                        <p>You can use the toll-free number to report malfunctions in the Webropol. For support and
+                            instructions please call <a href="#" class="blue-link">0600 17005</a>. Call
+                            charges: 3,00 €/min + local network rate</p>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </footer>
+        </div>
+    </section>
+
+
+</body>
+
+</html>

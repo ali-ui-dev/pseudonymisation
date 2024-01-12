@@ -1,0 +1,189 @@
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey creation</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"
+    integrity="sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script> $(function () { $("#topHeader").load("TopHeader.html"); }); </script>
+  <script> $(function () { $("#contactFormInfoEnc").load("shared/contactFormInfoEnc.html"); }); </script>
+  <script> $(function () { $("#topIconsReport").load("shared/topIconsReport.html"); }); </script>
+  <script> $(function () { $("#revealConfidentional").load("shared/ReportingPopup.html"); }); </script>
+
+  <link href="assets/css-report/bootstrap-datetimepicker.css" rel="stylesheet" />
+  <link href="assets/css-report/gridstack.css" rel="stylesheet" />
+  <link href="assets/css-report/css.css" rel="stylesheet" />
+  <link href="assets/css-report/bootstrap-slider.css" rel="stylesheet" />
+
+</head>
+
+<body class="stage-environment" style="">
+  <img src="/Content/images/ajax-loader.gif" id="loading-indicator" style="display:none">
+  <div id="content" class="content" style="overflow: visible;">
+    <div class="report-content fill-height ui-layout-container" style="overflow: hidden; position: relative;">
+      <div class="ui-layout-north header-container ui-layout-pane ui-layout-pane-north"
+        style="position: absolute; margin: 0px; inset: 0px 0px auto; width: auto; z-index: 0; height: 143.5px; display: block; visibility: visible;">
+
+        <div id="topHeader"></div>
+
+        <div class="container" id="main-content">
+          <div class="toolbar report-tools-toolbar">
+            <div class="report-toolbar toolbar-left-panel">
+              <div id="saveContainer" class="save-container">
+                <div class="dropdown  btn-group">
+                  <button id="dropdownReport" type="button"
+                    class="report-list-dropdown report-list-button btn btn-default dropdown-toggle "
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span data-bind="html: getCurrentReportName()">Basic report</span>
+                  </button>
+                  <button class="btn btn-default dropdown-toggle report-list-button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <span class="caret"></span>
+                  </button>
+                  <ul id="savedReportsList" class="dropdown-menu" role="menu" style="min-width: 259.038px;">
+                    <li role="presentation">
+                      <div class="menu-item current-report-dropdown-item"
+                        data-bind="css: {'current-report-dropdown-item': $parent.isSameReport($data), 'disabled-item' : IsShadowCopy}">
+                        <a href="#" class="reportNameDropdown report-name"
+                          data-bind="html: Name, disabledLink: IsShadowCopy() , click: $parent.onChangeReport, attr: { title: IsShadowCopy() ? 'Save or delete the edited report to open this report' : ''}"
+                          role="menuitem" tabindex="-1" title="">Basic report</a>
+                        <span class="menu-item-actions">
+                          <a href="#" class="btn-link pull-right" title="Copy report"
+                            data-bind="disabledLink: IsShadowCopy() &amp;&amp; !IsSharedReport(), disabledLinkTitle: 'Save or delete the edited report to copy this report', click: $parent.onCopyReport"
+                            role="menuitem" tabindex="-1">
+                            <span class="fa fa-copy fa-fw"></span>
+                          </a>
+                        </span>
+                        <div class="clearfix"></div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="clearfix"></div>
+              </div>
+              <a href="#" class="report-save disabled" title="Save"
+                data-bind="disabledLink: !canSave(), click: onSaveEditedReportClick, css: {'disabled': !canSave(), 'edit-mode': IsDirtyReport()}"
+                aria-disabled="true">
+                <img class="icon-20" src="/Content/images/save.svg">
+                <span class="first-line-image-icon save-report-icon">Save</span>
+              </a>
+              <a href="#" class="report-save" data-bind="click: onSaveAsClicked, css: {'edit-mode': IsDirtyReport()}"
+                title="Save as">
+                <img class="icon-20" src="/Content/images/save.svg">
+                <span class="first-line-image-icon save-report-icon">Save as</span>
+              </a>
+              <div class="clearfix"></div>
+            </div>
+
+            <div id="topIconsReport"></div>
+
+
+            <div class="clearfix"></div>
+            <a href="#" class="fa fa-chevron-up collapse-report-toolbar-button" title="Collapse toolbar"></a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="ui-layout-center clearfix ui-layout-pane ui-layout-pane-center ui-layout-pane-hover ui-layout-pane-center-hover ui-layout-pane-open-hover ui-layout-pane-center-open-hover"
+        style="position: absolute; margin: 0px; inset: 233.118px 0px 0px; height: 750.882px; width: 1493px; z-index: 0; display: block; visibility: visible;">
+        <div class="container layoutMainContainer fill-height ui-layout-container"
+          style="overflow: hidden; position: relative;">
+          <div class="js-loading-veil loading-veil" style="display: none;"></div>
+          <div class="ui-layout-west left-panel-content ui-layout-pane ui-layout-pane-west ui-layout-container"
+            style="position: absolute; margin: 0px; inset: 0px auto 0px 30px; height: 751px; z-index: 0; width: 280px; display: block; visibility: visible; overflow: visible;">
+            <div class="ui-layout-north ui-layout-pane ui-layout-pane-north"
+              style="position: absolute; margin: 0px; inset: 0px 0px auto; width: auto; z-index: 0; height: 1.00472px; display: block; visibility: visible;">
+            </div>
+            <div
+              class="ui-layout-center report no-padding scrollable report-question-navigation ui-layout-pane ui-layout-pane-center"
+              data-bind="delegatedHandler: 'click'"
+              style="position: absolute; margin: 0px; inset: 1.00472px 0px 0px; height: 749.995px; width: 280px; z-index: 0; display: block; visibility: visible;">
+              <div class="report-content-navigation ">
+                <ul class="question-tree list-unstyled ui-sortable" id="question-tree-sortable">
+                  <li class="question-tree-item ui-sortable-handle"
+                    data-bind=" sync: $data, css: { selected: IsSelected }">
+                    <div class="question drag-item tree-drag-item" data-click="onNavigationQuestionClicked">
+                      <span class="drag-handle tree-drag-handle"></span>
+                      <label class="question-name-normal-questions-div"
+                        data-bind="html: TreePlainName, attr: { title: PlainName, id: 'q-' + QuestionId() }"
+                        title="Contact form " id="q-2234322">Contact form </label>
+                      <img width="20px" height="20px" data-bind="click:$parent.onShowPersonalData"
+                        alt="Contains personal data" title="Contains personal data"
+                        src="/Content/images/white-shield.svg">
+                      <div class="clearfix"></div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div id=""
+              class="ui-layout-resizer ui-layout-resizer-north ui-layout-resizer-open ui-layout-resizer-north-open"
+              style="position: absolute; padding: 0px; margin: 0px; font-size: 1px; text-align: left; overflow: hidden; z-index: 2; top: 1px; cursor: default; display: none;">
+            </div>
+          </div>
+          <div
+            class="ui-layout-center scrollable ui-layout-pane ui-layout-pane-center ui-layout-pane-hover ui-layout-pane-center-hover ui-layout-pane-open-hover ui-layout-pane-center-open-hover"
+            style="position: absolute; margin: 0px; inset: 0px 35px 0px 315.991px; height: 751px; width: 1142.01px; z-index: 0; display: block; visibility: visible;">
+            <div class="layoutInnerPaneContainer fill-height ui-layout-container"
+              style="overflow: hidden; position: relative;">
+              <div
+                class="ui-layout-center scrollable fix-position report-container ui-layout-pane ui-layout-pane-center ui-layout-pane-hover ui-layout-pane-center-hover ui-layout-pane-open-hover ui-layout-pane-center-open-hover"
+                style="position: absolute; margin: 0px; inset: 0px; height: 751px; width: 1142px; z-index: 0; display: block; visibility: visible;">
+                <div class="fill-height">
+                  <div class="report">
+                    <div class="report-main ReportClass_810686507">
+
+                      <div class="report-header">
+                        <div>
+                          <div class="well-report">
+                            <div class="report-header-edit-individual-reports-settings">
+                            </div>
+                            <div class="report-title trigger">
+                              <div class="row">
+                                <div class="col-md-8">
+                                  <h1
+                                    class="storage-report-title-style cke_editable cke_editable_inline cke_contents_ltr cke_show_borders"
+                                    data-bind="" id="_inline_cked_1" contenteditable="true" tabindex="0"
+                                    spellcheck="false" role="textbox" aria-multiline="true" aria-label="false"
+                                    aria-describedby="cke_54" style="position: relative;">Pseudonymize</h1>
+                                </div>
+                                <div style="float: right;">
+                                  <a href="/ReportingEnc.html" class="btn btn-default">Pseudonymize</a>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row number-of-responses">
+                              <div class="col-md-12">
+                                <h2 class="storage-total-numbers-of-responses">
+                                  Total number of respondents: 1
+                                </h2>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div id="contactFormInfoEnc"></div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div id="scrollup-btn" class="hide" data-tab-group="5.2">
+    <a href="#" title="To the top">
+      <span class="fa fa-chevron-up"></span>
+    </a>
+  </div>
+
+</body>
+
+</html>
